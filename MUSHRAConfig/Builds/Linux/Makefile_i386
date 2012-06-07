@@ -1,0 +1,116 @@
+# Automatically generated makefile, created by the Jucer
+# Don't edit this file! Your changes will be overwritten when you re-save the Jucer project!
+
+ifndef CONFIG
+  CONFIG=Debug
+endif
+
+ifeq ($(TARGET_ARCH),)
+  TARGET_ARCH := -march=native
+endif
+
+# (this disables dependency generation if multiple architectures are set)
+DEPFLAGS := $(if $(word 2, $(TARGET_ARCH)), , -MMD)
+
+ifeq ($(CONFIG),Debug)
+  BINDIR := build
+  LIBDIR := build
+  OBJDIR := build/intermediate/Debug
+  OUTDIR := ../../../Bin/Linux-i386/Debug
+  CPPFLAGS := $(DEPFLAGS) -D "LINUX=1" -D "DEBUG=1" -D "_DEBUG=1" -D "JUCER_LINUX_MAKE_7346DA2A=1" -I "/usr/include" -I "/usr/include/freetype2"
+  CFLAGS += $(CPPFLAGS) $(TARGET_ARCH) -g -ggdb -O0
+  CXXFLAGS += $(CFLAGS) 
+  LDFLAGS += -L$(BINDIR) -L$(LIBDIR) -L"/usr/X11R6/lib/" -L"../../../../juce/bin" -lfreetype -lpthread -lrt -lX11 -lGL -lGLU -lXinerama -lasound 
+  LDDEPS :=
+  RESFLAGS :=  -D "LINUX=1" -D "DEBUG=1" -D "_DEBUG=1" -D "JUCER_LINUX_MAKE_7346DA2A=1" -I "/usr/include" -I "/usr/include/freetype2"
+  TARGET := MUSHRAConfig
+  BLDCMD = $(CXX) -o $(OUTDIR)/$(TARGET) $(OBJECTS) $(LDFLAGS) $(RESOURCES) $(TARGET_ARCH)
+endif
+
+ifeq ($(CONFIG),Release)
+  BINDIR := build
+  LIBDIR := build
+  OBJDIR := build/intermediate/Release
+  OUTDIR := ../../../Bin/Linux-i386/Release
+  CPPFLAGS := $(DEPFLAGS) -D "LINUX=1" -D "NDEBUG=1" -D "JUCER_LINUX_MAKE_7346DA2A=1" -I "/usr/include" -I "/usr/include/freetype2"
+  CFLAGS += $(CPPFLAGS) $(TARGET_ARCH) -Os
+  CXXFLAGS += $(CFLAGS) 
+  LDFLAGS += -L$(BINDIR) -L$(LIBDIR) -L"/usr/X11R6/lib/" -L"../../../../juce/bin" -lfreetype -lpthread -lrt -lX11 -lGL -lGLU -lXinerama -lasound 
+  LDDEPS :=
+  RESFLAGS :=  -D "LINUX=1" -D "NDEBUG=1" -D "JUCER_LINUX_MAKE_7346DA2A=1" -I "/usr/include" -I "/usr/include/freetype2"
+  TARGET := MUSHRAConfig
+  BLDCMD = $(CXX) -o $(OUTDIR)/$(TARGET) $(OBJECTS) $(LDFLAGS) $(RESOURCES) $(TARGET_ARCH)
+endif
+
+OBJECTS := \
+  $(OBJDIR)/configMain_f6151035.o \
+  $(OBJDIR)/MushraConfigComponent_f5ba4c5f.o \
+  $(OBJDIR)/SubjectsTabComponent_8f473b49.o \
+  $(OBJDIR)/SubjectTableListBox_37ad2fbb.o \
+  $(OBJDIR)/BinaryData_ce4232d4.o \
+  $(OBJDIR)/JuceLibraryCode1_682c927f.o \
+  $(OBJDIR)/JuceLibraryCode2_683aaa00.o \
+  $(OBJDIR)/JuceLibraryCode3_6848c181.o \
+  $(OBJDIR)/JuceLibraryCode4_6856d902.o \
+
+.PHONY: clean
+
+$(OUTDIR)/$(TARGET): $(OBJECTS) $(LDDEPS) $(RESOURCES)
+	@echo Linking MUSHRAConfig
+	-@mkdir -p $(BINDIR)
+	-@mkdir -p $(LIBDIR)
+	-@mkdir -p $(OUTDIR)
+	@$(BLDCMD)
+
+clean:
+	@echo Cleaning MUSHRAConfig
+	-@rm -f $(OUTDIR)/$(TARGET)
+	-@rm -rf $(OBJDIR)/*
+	-@rm -rf $(OBJDIR)
+
+$(OBJDIR)/configMain_f6151035.o: ../../../Source/configMain.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling configMain.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/MushraConfigComponent_f5ba4c5f.o: ../../../Source/MushraConfigComponent.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling MushraConfigComponent.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/SubjectsTabComponent_8f473b49.o: ../../../Source/SubjectsTabComponent.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling SubjectsTabComponent.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/SubjectTableListBox_37ad2fbb.o: ../../../Source/SubjectTableListBox.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling SubjectTableListBox.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/BinaryData_ce4232d4.o: ../../JuceLibraryCode/BinaryData.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling BinaryData.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/JuceLibraryCode1_682c927f.o: ../../JuceLibraryCode/JuceLibraryCode1.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling JuceLibraryCode1.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/JuceLibraryCode2_683aaa00.o: ../../JuceLibraryCode/JuceLibraryCode2.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling JuceLibraryCode2.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/JuceLibraryCode3_6848c181.o: ../../JuceLibraryCode/JuceLibraryCode3.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling JuceLibraryCode3.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/JuceLibraryCode4_6856d902.o: ../../JuceLibraryCode/JuceLibraryCode4.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling JuceLibraryCode4.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+-include $(OBJECTS:%.o=%.d)

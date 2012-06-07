@@ -1,0 +1,307 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black, urlcolor=blue, filecolor=blue, pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false"
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+MUSHRATest
+\end_layout
+
+\begin_layout Author
+User's Guide
+\end_layout
+
+\begin_layout Date
+1 March 2012
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+MUSHRATest is an implementation of the MUSHRA listening test defined by
+ ITU-R recommendation BS.1534-1
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+BS.1534-1.
+ Method for the subjective assessment of intermediate quality levels of
+ coding systems.
+\end_layout
+
+\end_inset
+
+.
+ MUSHRATest was primarily intended for spatial audio psychoacoustic tests
+ and is thus optimised for multi-channel sound reproduction.
+\end_layout
+
+\begin_layout Standard
+The software is written using JUCE library that supports a number of target
+ platforms including Mac OSX, iOS, Windows XP/Vista/Win7, Linux and Android.
+\end_layout
+
+\begin_layout Section
+License
+\end_layout
+
+\begin_layout Standard
+The software is released under GNU General Public License Version 3.
+\end_layout
+
+\begin_layout Section
+Installation
+\end_layout
+
+\begin_layout Standard
+MUSHRTest can be downloaded from the author's website.
+ The installers are provided for 32- and 64 bit Windows targets.
+ You should have administrators priveligies to install the program.
+\end_layout
+
+\begin_layout Standard
+Installation is simple: choose the platform, download the file, start the
+ installer and follow the instructions.
+ 
+\end_layout
+
+\begin_layout Section
+Configuration
+\end_layout
+
+\begin_layout Standard
+You will need to run MUSHRAConfig to setup the audio device and specify
+ subject's names and stimuli directories.
+ It is recommended to use ASIO audio interface (if supported by your hardware)
+ and set the buffer size to at least 512 samples.
+\end_layout
+
+\begin_layout Standard
+MUSHRATest allows individualised stimuli to be used for each subject.
+ This was done to support binaural listening tests with the stimuli rendered
+ using individual subject's HRTFs.
+ If this feature is not required you can specify the same directory for
+ each subject.
+\end_layout
+
+\begin_layout Section
+Preparing the stimuli
+\end_layout
+
+\begin_layout Standard
+There are certain rules and limitation in preparing your stimuli:
+\end_layout
+
+\begin_layout Itemize
+All stimuli should be placed in one folder, with different subfolders correspond
+ing to each trial in the test.
+ The name of the subfolder will be displayed to the user during the tests.
+\end_layout
+
+\begin_layout Itemize
+Each stimulus in the trial should be saved as a (multichannel) WAV file
+ preferably in 32-bit floating point format
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+If you have your files in a different format you can use open-source Audacity
+ software to convert them.
+ Visit 
+\family typewriter
+http://audacity.sourceforge.net/
+\family default
+ for more details.
+ 
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+One of the files should be the reference and must have the word 'reference'
+ included in its filename.
+ All other filenames could be arbitrary.
+\end_layout
+
+\begin_layout Section
+Running the tests
+\end_layout
+
+\begin_layout Standard
+MUSHRATest includes two parts: the training phase and evaluation phase.
+ The former is required by the standard and gives the users the opportunity
+ to familiarise themselves with the program interface and the stimuli they
+ are going to listen.
+\end_layout
+
+\begin_layout Standard
+The user interface is specified by the BS.1534-1 which should be consulted
+ for more details.
+\end_layout
+
+\begin_layout Section
+Results of the test
+\end_layout
+
+\begin_layout Standard
+By default, the results of the tests are saved in the same directory as
+ the subject's stimuli.
+ If this is impossible due to write access restrictions the file is saved
+ in the User's Documents directory (My Documents on Windows).
+\end_layout
+
+\begin_layout Standard
+The name of the results file has the following format: 
+\family typewriter
+[date]_[time]_[subject name].txt
+\family default
+.
+ This is a tab-separated text file that can be read by any text editor or
+ spreadsheet software.
+\end_layout
+
+\begin_layout Section
+Compiling from the source code
+\end_layout
+
+\begin_layout Standard
+The source code and Visual Studio 2010 project files are available from
+ the author's website.
+ The code depends on open-source JUCE library that can be downloaded from
+ 
+\family typewriter
+http://www.rawmaterialsoftware.com.
+ 
+\family default
+The library should be placed in the same parent folder as MUSHRATest.
+ In order to use ASIO audio device interface JUCE requires ASIO SDK to be
+ installed.
+ This SDK can be obtained from 
+\family typewriter
+http://www.steinberg.net/en/company/developer.html
+\family default
+.
+ Depending on your computer configuration DirectX SDK might also be required.
+ This could be obtained from Microsoft at: 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+http://msdn.microsoft.com/en-us/directx/aa937788
+\family default
+.
+\end_layout
+
+\begin_layout Section
+Bug reports and user feedback
+\end_layout
+
+\begin_layout Standard
+If you found a bug or have problems compiling the code please contact the
+ author using the form on the website.
+ Please make sure that you save the log file created by MUSHRATest.
+ The log can be found in the user-specific Application Data Directory.
+ On Windows 7 the full path is:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+C:
+\backslash
+Users
+\backslash
+<current-user>
+\backslash
+AppData
+\backslash
+Roaming
+\backslash
+MUSHRATest
+\backslash
+mushra.log.txt
+\end_layout
+
+\end_body
+\end_document

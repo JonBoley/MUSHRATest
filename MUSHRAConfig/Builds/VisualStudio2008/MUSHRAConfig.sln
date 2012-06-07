@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C++ Express 2008
+Project("{D80E2316-866E-31BD-6BF7-42F56034DFED}") = "MUSHRAConfig", "MUSHRAConfig.vcproj", "{BE281FAE-28A2-61B2-6AAD-ECBC73DE50F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE281FAE-28A2-61B2-6AAD-ECBC73DE50F4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BE281FAE-28A2-61B2-6AAD-ECBC73DE50F4}.Debug|Win32.Build.0 = Debug|Win32
+		{BE281FAE-28A2-61B2-6AAD-ECBC73DE50F4}.Release|Win32.ActiveCfg = Release|Win32
+		{BE281FAE-28A2-61B2-6AAD-ECBC73DE50F4}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
