@@ -1,0 +1,123 @@
+%% LyX 2.0.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[oneside,english]{book}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\usepackage{babel}
+\begin{document}
+
+\title{MUSHRATest}
+
+
+\author{User's Guide}
+
+
+\date{1 March 2012}
+
+\maketitle
+
+\section*{Introduction}
+
+MUSHRATest is an implementation of the MUSHRA listening test defined
+by ITU-R recommendation BS.1534-1%
+\footnote{BS.1534-1. Method for the subjective assessment of intermediate quality
+levels of coding systems.%
+}. MUSHRATest was primarily intended for spatial audio psychoacoustic
+tests and is thus optimised for multi-channel sound reproduction.
+
+The software is written using JUCE library that supports a number
+of target platforms including Mac OSX, iOS, Windows XP/Vista/Win7,
+Linux and Android.
+
+
+\section*{License}
+
+The software is released under GNU General Public License Version
+3.
+
+
+\section*{Installation}
+
+MUSHRTest can be downloaded from the author's website. The installers
+are provided for 32- and 64 bit Windows targets. 
+
+Choose the platform, start the installer and follow the instructions.
+You should have administrators priveligies to install the program.
+
+
+\section*{Configuration}
+
+You will need to run MUSHRAConfig to setup the audio device and specify
+subject's names and stimuli directories. It is recommended to use
+ASIO audio interface (if supported by your hardware) and set the buffer
+size to at least 512 samples.
+
+MUSHRATest allows individualised stimuli to be used for each subject.
+This was done to support binaural listening tests with the stimuli
+rendered using individual subject's HRTFs. If this feature is not
+required you can specify the same directory for each subject.
+
+
+\section*{Preparing the stimuli}
+
+There are certain rules and limitation in preparing your stimuli:
+\begin{itemize}
+\item All stimuli should be placed in one folder, with different subfolders
+corresponding to each trial in the test. The name of the subfolder
+will be displayed to the user during the tests.
+\item Each stimulus in the trial should be saved as a (multichannel) WAV
+file preferably in 32-bit floating point format%
+\footnote{If you have your files in a different format you can use open-source
+Audacity software to convert them. Visit \texttt{http://audacity.sourceforge.net/}
+for more details. %
+}. 
+\item One of the files should be the reference and must have the word 'reference'
+included in its filename. All other filenames could be arbitrary.
+\end{itemize}
+
+\section*{Running the tests}
+
+MUSHRATest includes two parts: the training phase and evaluation phase.
+The former is required by the standard and gives the users the opportunity
+to familiarise themselves with the program interface and the stimuli
+they are going to listen.
+
+
+\section*{Results of the test}
+
+By default, the results of the tests are saved in the same directory
+as the subject's stimuli. If the stimuli directory does not provide
+write access permissions than the file is saved in the User's Documents
+directory.
+
+The name of the results file has the following format: \texttt{{[}date{]}\_{[}time{]}\_{[}subject
+name{]}.txt}. This is a tab-separated text file that can be read by
+any text editor or spreadsheet software.
+
+
+\section*{Compiling from the source code}
+
+The source code and Visual Studio 2010 project files are available
+from the author's website. The code depends on open-source JUCE library
+that can be downloaded from \texttt{http://www.rawmaterialsoftware.com. }The
+library should be placed in the same root folder as MUSHRATest. In
+order to use ASIO audio device interface JUCE requires ASIO SDK to
+be installed. This SDK can be obtained from \texttt{http://www.steinberg.net/en/company/developer.html}.
+Depending on your computer configuration DirectX SDK might also be
+required. This could also be obtained from Microsoft at: 
+
+\texttt{http://msdn.microsoft.com/en-us/directx/aa937788}.
+
+
+\section*{Bug reports and user feedback}
+
+If you found a bug or have problems compiling the code please contact
+the author using the form on the website. Please make sure that you
+save the log file that the program creates. The log can be found in
+the user-specific Application Data Directory. On Windows 7 64 bit
+the full path is:
+
+\texttt{C:\textbackslash{}Users\textbackslash{}<current-user>\textbackslash{}AppData\textbackslash{}Roaming\textbackslash{}MUSHRATest\textbackslash{}mushra.log.txt}
+\end{document}
